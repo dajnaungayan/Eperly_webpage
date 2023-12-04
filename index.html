@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="styles.css"></link>
+        <title>Eperly-Lite v1.0</title>
+    </head>
+    <body id="body">
+        <!-- <div id="bg1"></div>
+        <div id="bg2"></div>
+        <div id="bg3"></div> -->
+        <!-- <div id="red-slider" class="slider"></div>
+        <div id="green-slider" class="slider"></div>
+        <div id="blue-slider" class="slider"></div>
+        <div id="brightness-slider" class="slider"></div> -->
+
+        <!-- <div id="static-choice"></div>
+        <div id="heartbeat-choice"></div>
+        <div id="rotate"></div> -->
+
+        <!-- <div class="title">
+            Eperly-Lite
+        </div> -->
+
+        <div id="test" class="lightBulb-container">
+            <div id="lightBulb" class="lightBulb">OFF</div>
+        </div>
+        <div class="slider-container">
+            <div class="quantizable">
+                <button class="add" id="brightnessUp">+</button>
+                <p>Brightness</p>
+                <button class="subtract" id="brightnessDown">-</button>
+            </div>
+            <div class="quantizable">
+                <button class="add" id="redUp">+</button>
+                <p>Red</p>
+                <button class="subtract" id="redDown">-</button>
+            </div>
+            <div class="quantizable">
+                <button class="add" id="greenUp">+</button>
+                <p>Green</p>
+                <button class="subtract" id="greenDown">-</button>
+            </div>
+            <div class="quantizable">
+                <button class="add" id="blueUp">+</button>
+                <p>Blue</p>
+                <button class="subtract" id="blueDown">-</button>
+            </div>
+        </div>
+
+        <div class="paletteContainer">
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+            <div class="predefinedColor"></div>
+        </div>
+        
+        <script>
+            let brightnessSlider = false;
+            let redSlider = false;
+            let greenSlider = false;
+            let blueSlider = false;
+
+            const lightBtn = document.getElementById("lightBulb");
+            const myBody = document.getElementById("body");
+            lightBtn.addEventListener("click", function () {
+                if(Object.is(this.innerHTML, "OFF"))
+                {
+                    this.innerHTML = "ON";
+                    this.animate({
+                        color: 'black',
+                        background: 'white',
+                        borderColor: 'black'
+                    }, { duration: 400, fill: 'forwards', easing: 'ease-in'});
+                    myBody.animate({
+                        background: 'white'
+                    }, { duration: 400, fill: 'forwards'})
+
+                    // const sliders = document.getElementsByClassName("slider");
+                    // for(let i = 0; i < sliders.length; i++)
+                    // {
+                    //     sliders[i].animate({
+                    //         // marginTop: '190vh'
+                    //         opacity: '100%'
+                    //     }, { duration: 400, fill: 'forwards'})
+                    // }
+
+                    const buttons = document.getElementsByTagName("button");
+                    for(let i = 0; i < buttons.length; i++)
+                    {
+                        buttons[i].animate({
+                            // marginTop: '210vh'
+                            opacity: '100%'
+                        }, { duration: 200, fill: 'forwards'})
+                    }
+                }
+                else if(Object.is(this.innerHTML, "ON"))
+                {
+                    this.innerHTML = "OFF";
+                    this.animate({
+                        color: 'white',
+                        background: 'black',
+                        borderColor: 'white'
+                    }, { duration: 400, fill: 'forwards', easing: 'ease-in'});
+                    myBody.animate({
+                        background: 'black'
+                    }, { duration: 400, fill: 'forwards'})
+
+                    // const sliders = document.getElementsByClassName("slider");
+                    // for(let i = 0; i < sliders.length; i++)
+                    // {
+                    //     sliders[i].animate({
+                    //         // marginTop: '210vh'
+                    //         opacity: '0'
+                    //     }, { duration: 200, fill: 'forwards'})
+                    // }
+
+                    const buttons = document.getElementsByTagName("button");
+                    for(let i = 0; i < buttons.length; i++)
+                    {
+                        buttons[i].animate({
+                            // marginTop: '210vh'
+                            opacity: '0'
+                        }, { duration: 200, fill: 'forwards'})
+                    }
+                }
+            });
+
+            window.onmousedown = function (e)
+            {
+                if(Object.is(e.target.id, 'brightness-slider'))
+                {
+                    brightnessSlider = true;
+                }
+                else if(Object.is(e.target.id, 'red-slider'))
+                {
+                    redSlider = true;
+                }
+                else if(Object.is(e.target.id, 'green-slider'))
+                {
+                    greenSlider = true;
+                }
+                else if(Object.is(e.target.id, 'blue-slider'))
+                {
+                    blueSlider = true;
+                }
+            }
+
+            window.onmouseup = function (e)
+            {
+                brightnessSlider = false;
+                redSlider = false;
+                greenSlider = false;
+                blueSlider = false;
+            }
+
+            window.onmousemove = function (e)
+            {
+                const moveY = e.clientY - window.innerHeight;
+                if(brightnessSlider)
+                {
+                    document.getElementById('brightness-slider').animate({
+                        transform: `translateY(${moveY}px)`
+                    }, {duration: 200, fill: 'forwards'})
+                }
+                else if(redSlider)
+                {
+                    document.getElementById('red-slider').animate({
+                        transform: `translateY(${moveY}px)`
+                    }, {duration: 200, fill: 'forwards'})
+                }
+                else if(greenSlider)
+                {
+                    document.getElementById('green-slider').animate({
+                        transform: `translateY(${moveY}px)`
+                    }, {duration: 200, fill: 'forwards'})
+                }
+                else if(blueSlider)
+                {
+                    document.getElementById('blue-slider').animate({
+                        transform: `translateY(${moveY}px)`
+                    }, {duration: 200, fill: 'forwards'})
+                }
+            }
+        </script>
+    </body>
+</html>
