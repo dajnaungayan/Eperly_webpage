@@ -19,37 +19,46 @@
         <div id="heartbeat-choice"></div>
         <div id="rotate"></div> -->
 
-        <!-- <div class="title">
+        <div id="title">
             Eperly-Lite
-        </div> -->
-
-        <div id="test" class="lightBulb-container">
-            <div id="lightBulb" class="lightBulb">OFF</div>
         </div>
+
+        <div id="page-container">
+            <div id="lightBulb-container" class="lightBulb-container">
+                <div id="lightBulb" class="lightBulb">OFF</div>
+            </div>
+            <div id="optionsMenu">
+                <input type="color" id="colorPicker"/>
+                <button type="button" class="optionMenu" id="static-choice">Static</button>
+                <button type="button" class="optionMenu" id="heartbeat-choice">Heartbeat</button>
+                <button type="button" class="optionMenu" id="rotate-choice">Rotate</button>
+            </div>
+        </div>
+
         <div class="slider-container">
-            <div class="quantizable">
-                <button class="add" id="brightnessUp">+</button>
-                <p>Brightness</p>
+            <div id="brightnessFine" class="quantizable">
                 <button class="subtract" id="brightnessDown">-</button>
+                <p>Brightness</p>
+                <button class="add" id="brightnessUp">+</button>
             </div>
-            <div class="quantizable">
-                <button class="add" id="redUp">+</button>
+            <div id="redFine" class="quantizable">
+                <button class="subtract" id="redDown">-</button>                
                 <p>Red</p>
-                <button class="subtract" id="redDown">-</button>
+                <button class="add" id="redUp">+</button>
             </div>
-            <div class="quantizable">
-                <button class="add" id="greenUp">+</button>
-                <p>Green</p>
+            <div id="greenFine" class="quantizable">
                 <button class="subtract" id="greenDown">-</button>
+                <p>Green</p>
+                <button class="add" id="greenUp">+</button>
             </div>
-            <div class="quantizable">
-                <button class="add" id="blueUp">+</button>
-                <p>Blue</p>
+            <div id="blueFine" class="quantizable">
                 <button class="subtract" id="blueDown">-</button>
+                <p>Blue</p>
+                <button class="add" id="blueUp">+</button>
             </div>
         </div>
 
-        <div class="paletteContainer">
+        <!-- <div class="paletteContainer">
             <div class="predefinedColor"></div>
             <div class="predefinedColor"></div>
             <div class="predefinedColor"></div>
@@ -90,7 +99,7 @@
             <div class="predefinedColor"></div>
             <div class="predefinedColor"></div>
             <div class="predefinedColor"></div>
-        </div>
+        </div> -->
         
         <script>
             let brightnessSlider = false;
@@ -98,8 +107,25 @@
             let greenSlider = false;
             let blueSlider = false;
 
+            const title = document.getElementById("title");
             const lightBtn = document.getElementById("lightBulb");
             const myBody = document.getElementById("body");
+            const inputs = document.getElementsByTagName("input");
+            const buttons = document.getElementsByTagName("button");
+            const staticChoice = document.getElementById("static-choice"
+            );
+            const heartbeatChoice = document.getElementById("heartbeat-choice"
+            );
+            const rotateChoice = document.getElementById("rotate-choice"
+            );
+            const colorPicker = document.getElementById("colorPicker");
+            const lightBulbContainer = document.getElementById("lightBulb-container");
+            const optionsMenu = document.getElementById("optionsMenu");
+            const brightnessFine = document.getElementById("brightnessFine");
+            const redFine = document.getElementById("redFine");
+            const greenFine = document.getElementById("greenFine");
+            const blueFine = document.getElementById("blueFine");
+
             lightBtn.addEventListener("click", function () {
                 if(Object.is(this.innerHTML, "OFF"))
                 {
@@ -108,28 +134,74 @@
                         color: 'black',
                         background: 'white',
                         borderColor: 'black'
-                    }, { duration: 400, fill: 'forwards', easing: 'ease-in'});
+                    }, { duration: 400, fill: 'forwards', easing: 'ease-in-out'});
                     myBody.animate({
                         background: 'white'
-                    }, { duration: 400, fill: 'forwards'})
+                    }, { duration: 400, fill: 'forwards', easing: 'ease-in-out'});
 
-                    // const sliders = document.getElementsByClassName("slider");
-                    // for(let i = 0; i < sliders.length; i++)
-                    // {
-                    //     sliders[i].animate({
-                    //         // marginTop: '190vh'
-                    //         opacity: '100%'
-                    //     }, { duration: 400, fill: 'forwards'})
-                    // }
-
-                    const buttons = document.getElementsByTagName("button");
                     for(let i = 0; i < buttons.length; i++)
                     {
                         buttons[i].animate({
                             // marginTop: '210vh'
                             opacity: '100%'
-                        }, { duration: 200, fill: 'forwards'})
+                        }, { duration: 200, fill: 'forwards', easing: 'ease-in-out'})
                     }
+
+                    for(let i = 0; i < inputs.length; i++)
+                    {
+                        inputs[i].animate({
+                            // marginTop: '210vh'
+                            opacity: '100%'
+                        }, { duration: 200, fill: 'forwards', easing: 'ease-in-out'})
+                    }
+
+                    colorPicker.animate({
+                        opacity: '100%',
+                        transform: 'translateY(5px)',
+                    }, { duration: 800, fill: 'forwards', easing: 'ease-in-out'});
+
+                    staticChoice.animate({
+                        opacity: '100%',
+                        transform: 'translateY(5px)'
+                    }, { duration: 800, fill: 'forwards', delay: 100, easing: 'ease-in-out'});
+
+                    heartbeatChoice.animate({
+                        opacity: '100%',
+                        transform: 'translateY(5px)'
+                    }, { duration: 800, fill: 'forwards', delay: 200, easing: 'ease-in-out'});
+
+                    rotateChoice.animate({
+                        opacity: '100%',
+                        transform: 'translateY(5px)'
+                    }, { duration: 800, fill: 'forwards', delay: 300, easing: 'ease-in-out'});
+
+                    brightnessFine.animate({
+                        opacity: '100%',
+                        transform: 'translateY(5px)'
+                    }, { duration: 400, fill: 'forwards', delay: 400, easing: 'ease-in-out'});
+
+                    redFine.animate({
+                        opacity: '100%',
+                        transform: 'translateY(5px)'
+                    }, { duration: 400, fill: 'forwards', delay: 500, easing: 'ease-in-out'});
+
+                    greenFine.animate({
+                        opacity: '100%',
+                        transform: 'translateY(5px)'
+                    }, { duration: 400, fill: 'forwards', delay: 600, easing: 'ease-in-out'});
+
+                    blueFine.animate({
+                        opacity: '100%',
+                        transform: 'translateY(5px)'
+                    }, { duration: 400, fill: 'forwards', delay: 700, easing: 'ease-in-out'});
+
+                    optionsMenu.animate({
+                        visibility: 'visible'
+                    }, { duration: 50, fill: 'forwards', easing: 'ease-in-out'});
+
+                    title.animate({
+                        color: 'black'
+                    }, { duration: 50, fill: 'forwards', easing: 'ease-in-out'})
                 }
                 else if(Object.is(this.innerHTML, "ON"))
                 {
@@ -137,34 +209,89 @@
                     this.animate({
                         color: 'white',
                         background: 'black',
-                        borderColor: 'white'
-                    }, { duration: 400, fill: 'forwards', easing: 'ease-in'});
+                        borderColor: 'white',
+                    }, { duration: 400, fill: 'forwards', easing: 'ease-in-out'});
                     myBody.animate({
                         background: 'black'
-                    }, { duration: 400, fill: 'forwards'})
+                    }, { duration: 400, fill: 'forwards', easing: 'ease-in-out'});
 
-                    // const sliders = document.getElementsByClassName("slider");
-                    // for(let i = 0; i < sliders.length; i++)
-                    // {
-                    //     sliders[i].animate({
-                    //         // marginTop: '210vh'
-                    //         opacity: '0'
-                    //     }, { duration: 200, fill: 'forwards'})
-                    // }
-
-                    const buttons = document.getElementsByTagName("button");
                     for(let i = 0; i < buttons.length; i++)
                     {
                         buttons[i].animate({
                             // marginTop: '210vh'
                             opacity: '0'
-                        }, { duration: 200, fill: 'forwards'})
+                        }, { duration: 200, fill: 'forwards', easing: 'ease-in-out'})
                     }
+
+                    for(let i = 0; i < inputs.length; i++)
+                    {
+                        inputs[i].animate({
+                            // marginTop: '210vh'
+                            opacity: '0'
+                        }, { duration: 200, fill: 'forwards', easing: 'ease-in-out'})
+                    }
+
+                    colorPicker.animate({
+                        opacity: '0%',
+                        transform: 'translateY(-5px)'
+                    }, { duration: 800, fill: 'forwards', easing: 'ease-in-out'});
+
+                    staticChoice.animate({
+                        opacity: '0%',
+                        transform: 'translateY(-5px)'
+                    }, { duration: 800, fill: 'forwards', delay: 100, easing: 'ease-in-out'});
+
+                    heartbeatChoice.animate({
+                        opacity: '0%',
+                        transform: 'translateY(-5px)'
+                    }, { duration: 800, fill: 'forwards', delay: 200, easing: 'ease-in-out'});
+
+                    rotateChoice.animate({
+                        opacity: '0%',
+                        transform: 'translateY(-5px)'
+                    }, { duration: 800, fill: 'forwards', delay: 300, easing: 'ease-in-out'});
+
+                    brightnessFine.animate({
+                        opacity: '0%',
+                        transform: 'translateY(-5px)'
+                    }, { duration: 400, fill: 'forwards', delay: 400, easing: 'ease-in-out'});
+
+                    redFine.animate({
+                        opacity: '0%',
+                        transform: 'translateY(-5px)'
+                    }, { duration: 400, fill: 'forwards', delay: 500, easing: 'ease-in-out'});
+
+                    greenFine.animate({
+                        opacity: '0%',
+                        transform: 'translateY(-5px)'
+                    }, { duration: 400, fill: 'forwards', delay: 600, easing: 'ease-in-out'});
+
+                    blueFine.animate({
+                        opacity: '0%',
+                        transform: 'translateY(-5px)'
+                    }, { duration: 400, fill: 'forwards', delay: 700, easing: 'ease-in-out'});
+
+                    optionsMenu.animate({
+                        visibility: 'hidden'
+                    }, { duration: 50, fill: 'forwards', easing: 'ease-in-out'});
+
+                    title.animate({
+                        color: 'white'
+                    }, { duration: 50, fill: 'forwards', easing: 'ease-in-out'})
                 }
             });
 
             window.onmousedown = function (e)
             {
+                const selectedWithId = document.getElementById(e.target.id);
+
+                if( (Object.is(e.target.className, 'subtract')) || (Object.is(e.target.className, 'add')) )
+                {
+                    selectedWithId.animate({
+                        background: 'rgb(191, 190, 190)'
+                    }, { duration: 50, fill: 'forwards'});
+                }
+
                 if(Object.is(e.target.id, 'brightness-slider'))
                 {
                     brightnessSlider = true;
@@ -185,6 +312,21 @@
 
             window.onmouseup = function (e)
             {
+                const adds = document.getElementsByClassName('add');
+
+                const subtracts = document.getElementsByClassName('subtract');
+
+                for( let i = 0; i < adds.length; i++ )
+                {
+                    adds[i].animate({
+                        background: 'white'
+                    }, { duration: 50, fill: 'forwards'});
+
+                    subtracts[i].animate({
+                        background: 'white'
+                    }, { duration: 50, fill: 'forwards'});
+                }
+
                 brightnessSlider = false;
                 redSlider = false;
                 greenSlider = false;
