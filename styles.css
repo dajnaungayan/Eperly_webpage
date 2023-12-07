@@ -13,7 +13,7 @@ body {
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
-    font-family: cursive, fantasy;
+    font-family: fantasy, cursive;
 }
 
 #title {
@@ -177,7 +177,7 @@ button {
 .optionMenu {
     width: 100px;
     height: 20px;
-    font-family: cursive, fantasy;
+    font-family: fantasy, cursive;
     font-size: 100%;
     padding-bottom: 25px;
     box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
