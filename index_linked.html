@@ -304,49 +304,37 @@
 
         <div id="page-container">
             <div id="lightBulb-container" class="lightBulb-container">
-                <a href='#0'><div id="lightBulb" class="lightBulb">OFF</div></a>
-                <!-- <a href='/on'>  -->
+                <a href='/on'><div id="lightBulb" class="lightBulb">OFF</div></a>
             </div>
             <div id="optionsMenu">
                 <a href='#0'></a><input type="color" id="colorPicker"/></a>
                 <!-- need to figure out the <a> -->
-                <a href='#0'></a><button type="button" class="optionMenu" id="static-choice">Static</button></a>
-                <!-- <a href='/static' -->
-                <a href='#0'></a><button type="button" class="optionMenu" id="heartbeat-choice">Heartbeat</button></a>
-                <!-- <a href='/heartbeat' -->
-                <a href='#0'></a><button type="button" class="optionMenu" id="rotate-choice">Rotate</button></a>
-                <!-- <a href='/rotate' -->
+                <a href='/static'></a><button type="button" class="optionMenu" id="static-choice">Static</button></a>
+                <a href='/heartbeat'></a><button type="button" class="optionMenu" id="heartbeat-choice">Heartbeat</button></a>
+                <a href='/rotate'></a><button type="button" class="optionMenu" id="rotate-choice">Rotate</button></a>
             </div>
         </div>
 
         <div class="slider-container">
             <div id="brightnessFine" class="quantizable">
-                <a href="#0"><button class="subtract" id="brightnessDown">-</button></a>
-                <!-- <a href='/brightness/dec' -->
+                <a href='/brightness/dec'><button class="subtract" id="brightnessDown">-</button></a>
                 <p>Brightness</p>
-                <a href="#0"><button class="add" id="brightnessUp">+</button></a>
-                <!-- <a href='/brightness/inc' -->
+                <a href='/brightness/inc'><button class="add" id="brightnessUp">+</button></a>
             </div>
             <div id="redFine" class="quantizable">
-                <a href="#0"><button class="subtract" id="redDown">-</button></a>
-                <!-- <a href='/r/dec' -->
+                <a href='/r/dec'><button class="subtract" id="redDown">-</button></a>
                 <p>Red</p>
-                <a href="#0"><button class="add" id="redUp">+</button></a>
-                <!-- <a href='/r/inc' -->
+                <a href='/r/inc'><button class="add" id="redUp">+</button></a>
             </div>
             <div id="greenFine" class="quantizable">
-                <a href="#0"><button class="subtract" id="greenDown">-</button></a>
-                <!-- <a href='/g/dec' -->
+                <a href='/g/dec'><button class="subtract" id="greenDown">-</button></a>
                 <p>Green</p>
-                <a href="#0"><button class="add" id="greenUp">+</button></a>
-                <!-- <a href='/g/inc' -->
+                <a href='/g/inc'><button class="add" id="greenUp">+</button></a>
             </div>
             <div id="blueFine" class="quantizable">
-                <a href="#0"><button class="subtract" id="blueDown">-</button></a>
-                <!-- <a href='/b/dec' -->
+                <a href='/b/dec'><button class="subtract" id="blueDown">-</button></a>
                 <p>Blue</p>
-                <a href="#0"><button class="add" id="blueUp">+</button></a>
-                <!-- <a href='/b/inc' -->
+                <a href='/b/inc'><button class="add" id="blueUp">+</button></a>
             </div>
         </div>
 
@@ -554,7 +542,6 @@
                     for(let i = 0; i < buttons.length; i++)
                     {
                         buttons[i].animate({
-                            // marginTop: '210vh'
                             opacity: '0'
                         }, { duration: 200, fill: 'forwards', easing: 'ease-in-out'})
                     }
@@ -562,7 +549,6 @@
                     for(let i = 0; i < inputs.length; i++)
                     {
                         inputs[i].animate({
-                            // marginTop: '210vh'
                             opacity: '0'
                         }, { duration: 200, fill: 'forwards', easing: 'ease-in-out'})
                     }
