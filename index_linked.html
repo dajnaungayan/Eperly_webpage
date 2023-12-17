@@ -10,7 +10,6 @@
                 --bg-2: rgb( 10, 10, 10);
                 --bg-3: rgb(40, 40, 40);
                 
-                --body-dark-bg1: rgb(0, 0, 0);
                 --body-light-bg1: rgb(230, 172, 118);
 
                 --dark-building0: rgb(43, 3, 43);
@@ -23,57 +22,145 @@
 
             }
 
-            body {
+            .predefinedColor {
+                width: 40px;
+                height: 40px;
+                background-color: yellow;
+            }
+        </style>
+        <title>Eperly-Lite v1.0</title>
+    </head>
+    <body id="body" style="
                 padding: 0;
-                background: var(--body-dark-bg1);
+                background: rgb(0, 0, 0);
                 overflow-y: scroll;
                 overflow-x: hidden;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
                 font-family: fantasy, cursive;
-            }
-
-            #title {
+                "
+    >
+        <div id="title" style="
                 color: white;
                 margin-top: 10vh;
                 display: flex;
                 justify-content: center;
-            }
+                "
+        >
+            Eperly-Lite
+        </div>
 
-            #building-container0 {
+        <div id="building-container0" style="
                 width: 100vw;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 position: fixed;
-            }
+                "
+        >
+            <div id="building01" class="building" style="
+                    width: 30vh;
+                    height: 75vh;
+                    background: rgb(43, 3, 43);
+                    margin-left: 400px;
+                    margin-top: 25vh;
+                    position: absolute;
+                    "
+            ></div>
+            <div id="building02" class="building" style="
+                    width: 15vh;
+                    height: 60vh;
+                    background: var(--dark-building0);
+                    margin-left: 100px;
+                    margin-top: 40vh;
+                    position: absolute;
+                    "
+            ></div>
+            <div id="building03" class="building" style="
+                    width: 35vh;
+                    height: 70vh;
+                    background: var(--dark-building0);
+                    margin-left: -350px;
+                    margin-top: 30vh;
+                    position: absolute;
+                    "
+            ></div>
+        </div>
 
-            #building-container1 {
+        <div id="building-container1" style="
                 width: 100vw;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 position: fixed;
-            }
+                "
+        >
+            <div id="building11" class="building" style="
+                        width: 15vh;
+                        height: 55vh;
+                        background: var(--dark-building1);
+                        margin-left: -350px;
+                        margin-top: 45vh;
+                        position: absolute;
+                    "
+            ></div>
+            <div id="building12" class="building" style="
+                    width: 15vh;
+                    height: 50vh;
+                    background: var(--dark-building1);
+                    margin-left: -150px;
+                    margin-top: 50vh;
+                    position: absolute;
+                    "
+            ></div>
+            <div id="building13" class="building" style="
+                    width: 15vh;
+                    height: 55vh;
+                    background: var(--dark-building1);
+                    margin-left: 400px;
+                    margin-top: 45vh;
+                    position: absolute;
+                    "
+            ></div>
+        </div>
 
-            #building-container2 {
+        <div id="building-container2" style="
                 width: 100vw;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 position: fixed;
-            }
+                "
+        >
+            <div id="building21" class="building" style="
+                    width: 45vh;
+                    height: 52vh;
+                    background: var(--dark-building2);
+                    margin-left: 220px;
+                    margin-top: 52vh;
+                    position: absolute;
+                    "
+            ></div>
+            <div id="building22" class="building" style="
+                    width: 15vh;
+                    height: 50vh;
+                    background: var(--dark-building2);
+                    margin-left: -420px;
+                    margin-top: 50vh;
+                    position: absolute;
+                    "
+            ></div>
+        </div>
 
-            #building-filter {
+        <div id="building-filter" style="
                 width: 100vw;
                 height: 100vh;
-                background: linear-gradient(rgb(0, 0, 0, 0) 40%, var(--body-dark-bg1) 90%);
+                background: linear-gradient(rgb(0, 0, 0, 0) 40%, rgb(0, 0, 0) 90%);
                 position: fixed;
-                /* background: blue;     */
-            }
-
-            #page-container {
+                "
+        ></div>
+        <div id="page-container" style="
                 display: flex;
                 align-items: center;
                 flex-direction: row;
@@ -82,263 +169,207 @@
                 position: absolute;
                 margin-top: 10vh;
                 max-height: 100vh;
-            }
+                ">
+            <div id="lightBulb-container" class="lightBulb-container" style="
+                    max-width: 30vh;
+                    height: 30vh;
+                    margin-top: 5vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    "
+            >
+                <a href='/on' style="text-decoration: none;"><div id="lightBulb" class="lightBulb" style=" position: relative; min-width: 25vh; min-height: 25vh; background: black; border: 1vh solid white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 300%; color: white; box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);">OFF</div></a>
+            </div>
+            <div id="optionsMenu" style="
+                    max-width: 30vh;
+                    height: 30vh;
+                    margin-top: 5vh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 2vh;
+                    visibility: visible;
+                    ">
+                <a href='#0' style="text-decoration: none;"></a><input type="color" id="colorPicker" style="width: 100px; height: 50px; border-radius: 5%; border: none; padding: 0; opacity: 100%; box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);"/>
+                <a href='/static' style="text-decoration: none;">
+                <button type="button" class="optionMenu" id="static-choice" style=" width: 100px; 
+                opacity: 100%; 
+                margin-left: 30px; 
+                margin-right: 30px; 
+                border-radius: 10px; 
+                box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8); 
+                height: 30px; 
+                font-family: fantasy, cursive; 
+                font-size: 100%;">Static</button></a>
+                <a href='/heartbeat' style="
+                        text-decoration: none;
+                        "
+                ><button type="button" class="optionMenu" id="heartbeat-choice" style="
+                        width: 100px;
+                        opacity: 100%;
+                        margin-left: 30px;
+                        margin-right: 30px;
+                        border-radius: 10px;
+                        box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+                        height: 30px;
+                        font-family: fantasy, cursive;
+                        font-size: 100%;
+                        "
+                >Heartbeat</button></a>
+                <a href='/rotate' style="text-decoration: none;"><button type="button" class="optionMenu" id="rotate-choice" style="width: 100px; opacity: 100%; margin-left: 30px; margin-right: 30px;border-radius: 10px; box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);height: 30px; font-family: fantasy, cursive; font-size: 100%;">Rotate</button></a>
+            </div>
+        </div>
+        <div class="slider-container" style="max-width: 100vh; height: 50vh; margin-top: 35vh; overflow: visible; z-index: 2; color: white">
+            <div id="brightnessFine" class="quantizable" style=" 
+                opacity: 100%;
+                display: flex; 
+                justify-content: space-between; 
+                margin-top: 25px; 
+                margin-bottom: 35px; 
+                max-width: 100vh;">
+                <a href='/brightness/dec' style="text-decoration: none;"><button class="subtract" id="brightnessDown" style=" 
+                    width: 100px;
+                    margin-left: 30px; 
+                    margin-right: 30px; 
+                    border-radius: 10px; 
+                    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8); 
+                    font-size: 200%;"
+                    >-</button></a>
+                <p>Brightness</p>
+                <a href='/brightness/inc' style="
+                        text-decoration: none;
+                        "
+                ><button class="add" id="brightnessUp" style="
+                        width: 100px;
+                        opacity: 100%;
+                        margin-left: 30px;
+                        margin-right: 30px;
+                        border-radius: 10px;
+                        box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+                        font-size: 200%;
+                        "
+                    >+</button></a>
+            </div>
+            <div id="redFine" class="quantizable" style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+                    max-width: 100vh;
+                    "
+            >
+                <a href='/r/dec' style="
+                        text-decoration: none;
+                        "
+                ><button class="subtract" id="redDown" style="
+                        width: 100px;
+                        opacity: 100%;
+                        margin-left: 30px;
+                        margin-right: 30px;
+                        border-radius: 10px;
+                        box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+                        font-size: 200%;
+                        "
+                    >-</button></a>
+                <p>Red</p>
+                <a href='/r/inc' style="
+                        text-decoration: none;
+                        "
+                ><button class="add" id="redUp" style="
+                        width: 100px;
+                        opacity: 100%;
+                        margin-left: 30px;
+                        margin-right: 30px;
+                        border-radius: 10px;
+                        box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+                        font-size: 200%;
+                        "
+                    >+</button></a>
+            </div>
+            <div id="greenFine" class="quantizable" style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+                    max-width: 100vh;
+                    "
+            >
+                <a href='/g/dec' style="
+                        text-decoration: none;
+                        "
+                ><button class="subtract" id="greenDown" style="
+                        width: 100px;
+                        opacity: 100%;
+                        margin-left: 30px;
+                        margin-right: 30px;
+                        border-radius: 10px;
+                        box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+                        font-size: 200%;
+                        "
+                    >-</button></a>
+                <p>Green</p>
+                <a href='/g/inc' style="
+                        text-decoration: none;
+                        "
+                ><button class="add" id="greenUp" style="
+                        width: 100px;
+                        opacity: 100%;
+                        margin-left: 30px;
+                        margin-right: 30px;
+                        border-radius: 10px;
+                        box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+                        font-size: 200%;
+                        "   
+                    >+</button></a>
+            </div>
+            <div id="blueFine" class="quantizable" style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+                    max-width: 100vh;
+                    "
+            >
+                <a href='/b/dec' style="
+                        text-decoration: none;
+                        "
+                ><button class="subtract" id="blueDown" style="
+                        width: 100px;
+                        opacity: 100%;
+                        margin-left: 30px;
+                        margin-right: 30px;
+                        border-radius: 10px;
+                        box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+                        font-size: 200%;
+                        "
+                >-</button></a>
+                <p>Blue</p>
+                <a href='/b/inc' style="
+                        text-decoration: none;
+                        "
+                ><button class="add" id="blueUp" style="
+                        width: 100px;
+                        opacity: 100%;
+                        margin-left: 30px;
+                        margin-right: 30px;
+                        border-radius: 10px;
+                        box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+                        font-size: 200%;
+                        "
+                >+</button></a>
+            </div>
+        </div>
 
-            .slider-container {
-                max-width: 100vh;
-                height: 50vh;
-                margin-top: 35vh;
-                overflow: hidden;
-            }
-
-            .paletteContainer {
+        <!-- <div class="paletteContainer" style="
                 max-width: 100vh;
                 display: flex;
                 flex-wrap: wrap;
                 gap: 10px;
                 margin: 50px;
-            }
-
-            .lightBulb-container {
-                max-width: 30vh;
-                height: 30vh;
-                margin-top: 5vh;
-                /* overflow: hidden; */
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .quantizable {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 20px;
-                margin-bottom: 30px;
-                max-width: 100vh;
-            }
-
-            button {
-                width: 100px;
-                opacity: 0%;
-                margin-left: 30px;
-                margin-right: 30px;
-                border-radius: 10px;
-                box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-                font-size: 200%;
-            }
-
-            .lightBulb {
-                position: relative;
-                min-width: 25vh;
-                min-height: 25vh;
-                background: black;
-                border: 1vh solid white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 300%;
-                color: white;
-                box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-            }
-
-            a {
-                text-decoration: none;
-            }
-
-            .predefinedColor {
-                width: 40px;
-                height: 40px;
-                background-color: yellow;
-            }
-
-            #optionsMenu {
-                max-width: 30vh;
-                height: 30vh;
-                margin-top: 5vh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 2vh;
-                visibility: hidden;
-            }
-
-            #colorPicker {
-                width: 100px;
-                height: 50px;
-                border-radius: 5%;
-                border: none;
-                padding: 0;
-                opacity: 0%;
-                box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-            }
-
-            .optionMenu {
-                width: 100px;
-                height: 30px;
-                font-family: fantasy, cursive;
-                font-size: 100%;
-                /* padding-bottom: 25px; */
-                box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-            }
-
-            #building01 {
-                width: 30vh;
-                height: 75vh;
-                background: var(--dark-building0);
-                margin-left: 400px;
-                margin-top: 25vh;
-                position: absolute;
-            }
-
-            #building02 {
-                width: 15vh;
-                height: 60vh;
-                background: var(--dark-building0);
-                margin-left: 100px;
-                margin-top: 40vh;
-                position: absolute;
-            }
-
-            #building03 {
-                width: 35vh;
-                height: 70vh;
-                background: var(--dark-building0);
-                margin-left: -350px;
-                margin-top: 30vh;
-                position: absolute;
-            }
-
-            /*
-                buildings for building1-container
-            */
-
-            #building11 {
-                width: 15vh;
-                height: 55vh;
-                background: var(--dark-building1);
-                margin-left: -350px;
-                margin-top: 45vh;
-                position: absolute;
-            }
-
-            #building12 {
-                width: 15vh;
-                height: 50vh;
-                background: var(--dark-building1);
-                margin-left: -150px;
-                margin-top: 50vh;
-                position: absolute;
-            }
-
-            #building13 {
-                width: 15vh;
-                height: 55vh;
-                background: var(--dark-building1);
-                margin-left: 400px;
-                margin-top: 45vh;
-                position: absolute;
-            }
-
-            /*
-                buildings for building1-container
-            */
-
-            #building21 {
-                width: 45vh;
-                height: 52vh;
-                background: var(--dark-building2);
-                margin-left: 220px;
-                margin-top: 52vh;
-                position: absolute;
-            }
-
-            #building22 {
-                width: 15vh;
-                height: 50vh;
-                background: var(--dark-building2);
-                margin-left: -420px;
-                margin-top: 50vh;
-                position: absolute;
-            }
-        </style>
-        <title>Eperly-Lite v1.0</title>
-    </head>
-    <body id="body">
-        <!-- <div id="bg1"></div>
-        <div id="bg2"></div>
-        <div id="bg3"></div> -->
-        <!-- <div id="red-slider" class="slider"></div>
-        <div id="green-slider" class="slider"></div>
-        <div id="blue-slider" class="slider"></div>
-        <div id="brightness-slider" class="slider"></div> -->
-
-        <!-- <div id="static-choice"></div>
-        <div id="heartbeat-choice"></div>
-        <div id="rotate"></div> -->
-
-        <div id="title">
-            Eperly-Lite
-        </div>
-
-        <div id="building-container0">
-            <div id="building01" class="building"></div>
-            <div id="building02" class="building"></div>
-            <div id="building03" class="building"></div>
-        </div>
-
-        <div id="building-container1">
-            <div id="building11" class="building"></div>
-            <div id="building12" class="building"></div>
-            <div id="building13" class="building"></div>
-        </div>
-
-        <div id="building-container2">
-            <div id="building21" class="building"></div>
-            <div id="building22" class="building"></div>
-            <div id="building23" class="building"></div>
-        </div>
-
-        <div id="building-filter"></div>
-
-        <div id="page-container">
-            <div id="lightBulb-container" class="lightBulb-container">
-                <a href='/on'><div id="lightBulb" class="lightBulb">OFF</div></a>
-            </div>
-            <div id="optionsMenu">
-                <a href='#0'></a><input type="color" id="colorPicker"/></a>
-                <!-- need to figure out the <a> -->
-                <a href='/static'></a><button type="button" class="optionMenu" id="static-choice">Static</button></a>
-                <a href='/heartbeat'></a><button type="button" class="optionMenu" id="heartbeat-choice">Heartbeat</button></a>
-                <a href='/rotate'></a><button type="button" class="optionMenu" id="rotate-choice">Rotate</button></a>
-            </div>
-        </div>
-
-        <div class="slider-container">
-            <div id="brightnessFine" class="quantizable">
-                <a href='/brightness/dec'><button class="subtract" id="brightnessDown">-</button></a>
-                <p>Brightness</p>
-                <a href='/brightness/inc'><button class="add" id="brightnessUp">+</button></a>
-            </div>
-            <div id="redFine" class="quantizable">
-                <a href='/r/dec'><button class="subtract" id="redDown">-</button></a>
-                <p>Red</p>
-                <a href='/r/inc'><button class="add" id="redUp">+</button></a>
-            </div>
-            <div id="greenFine" class="quantizable">
-                <a href='/g/dec'><button class="subtract" id="greenDown">-</button></a>
-                <p>Green</p>
-                <a href='/g/inc'><button class="add" id="greenUp">+</button></a>
-            </div>
-            <div id="blueFine" class="quantizable">
-                <a href='/b/dec'><button class="subtract" id="blueDown">-</button></a>
-                <p>Blue</p>
-                <a href='/b/inc'><button class="add" id="blueUp">+</button></a>
-            </div>
-        </div>
-
-        <!-- <div class="paletteContainer">
+                "
+            >
             <div class="predefinedColor"></div>
             <div class="predefinedColor"></div>
             <div class="predefinedColor"></div>
