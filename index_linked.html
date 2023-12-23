@@ -20,13 +20,30 @@
                 --light-building1: rgb(130, 78, 46);
                 --light-building2: rgb(191, 121, 78);
 
+                --paletteWidth: 40px;
+                --paletteHeight: 40px;
+
             }
 
             .predefinedColor {
                 width: 40px;
                 height: 40px;
-                background-color: yellow;
+                border-radius: 20%;
+                box-shadow: 0 0 0 2px black;
             }
+
+            button{
+                transition: 0.3s;
+            }
+
+            button:hover {scale: 110%}
+
+            .predefinedColor {
+                transition: 0.3s;
+            }
+
+            .predefinedColor:hover {scale: 120%}
+
         </style>
         <title>Eperly-Lite v1.0</title>
     </head>
@@ -362,54 +379,374 @@
             </div>
         </div>
 
-        <!-- <div class="paletteContainer" style="
-                max-width: 100vh;
+        <div class="paletteContainer" style="
+                max-width: 70vh;
                 display: flex;
                 flex-wrap: wrap;
                 gap: 10px;
                 margin: 50px;
+                z-index: 3;
                 "
             >
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-            <div class="predefinedColor"></div>
-        </div> -->
-    </body>
+            <!-- Candle -->
+            <a href='/color/0'>
+                <div class="predefinedColor" style="
+                    background-color: #FF9329;
+                    "
+                >
+                </div>
+            </a>
+
+            <!-- tungsten 40W -->
+            <a href='/color/1'>
+                <div class="predefinedColor" style="
+                    background-color: #FFC58F;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- tungsten 100W -->
+            <a href='/color/2'>
+                <div class="predefinedColor" style="
+                    background-color: #FFD6AA;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- halogen -->
+            <a href='/color/3'>
+                <div class="predefinedColor" style="
+                    background-color: #FFF1E0;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- carbon arc -->
+            <a href='/color/4'>
+                <div class="predefinedColor" style="
+                    background-color: #FFFAF4;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- high noon -->
+            <a href='/color/5'>
+                <div class="predefinedColor" style="
+                    background-color: #FFFFF0;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- ivory -->
+            <a href='/color/6'>
+                <div class="predefinedColor" style="
+                    background-color: #FFFFFB;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- direct sunlight -->
+            <a href='/color/7'>
+                <div class="predefinedColor" style="
+                    background-color: #FFFFFF;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- overcast sky -->
+            <a href='/color/8'>
+                <div class="predefinedColor" style="
+                    background-color: #C9E2FF;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- clear blue sky -->
+            <a href='/color/9'>
+                <div class="predefinedColor" style="
+                    background-color: #409CFF;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- red palette 1 -->
+            <a href='/color/10'>
+                <div class="predefinedColor" style="
+                    background-color: #F2D68B;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- red palette 2 -->
+            <a href='/color/11'>
+                <div class="predefinedColor" style="
+                    background-color: #EF8A1B;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- red palette 3 -->
+            <a href='/color/12'>
+                <div class="predefinedColor" style="
+                    background-color: #ED583B;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- red palette 4 -->
+            <a href='/color/13'>
+                <div class="predefinedColor" style="
+                    background-color: #F4B8CE;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- red palette 5 -->
+            <a href='/color/14'>
+                <div class="predefinedColor" style="
+                    background-color: #E85B94;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- red palette 6 -->
+            <a href='/color/15'>
+                <div class="predefinedColor" style="
+                    background-color: #C9245F;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- red palette 7 -->
+            <a href='/color/16'>
+                <div class="predefinedColor" style="
+                    background-color: #EFA8A8;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- red palette 8 -->
+            <a href='/color/17'>
+                <div class="predefinedColor" style="
+                    background-color: #EF353F;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- red palette 9 -->
+            <a href='/color/18'>
+                <div class="predefinedColor" style="
+                    background-color: #BF1D29;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- red palette 10 -->
+            <a href='/color/19'>
+                <div class="predefinedColor" style="
+                    background-color: #89030D;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- green palette 1 -->
+            <a href='/color/20'>
+                <div class="predefinedColor" style="
+                    background-color: #D4EEEB;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- green palette 2 -->
+            <a href='/color/21'>
+                <div class="predefinedColor" style="
+                    background-color: #C6E4D9;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- green palette 3 -->
+            <a href='/color/22'>
+                <div class="predefinedColor" style="
+                    background-color: #85D0C6;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- green palette 4 -->
+            <a href='/color/23'>
+                <div class="predefinedColor" style="
+                    background-color: #73CDD1;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- green palette 5 -->
+            <a href='/color/24'>
+                <div class="predefinedColor" style="
+                    background-color: #00BDAE;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- green palette 6 -->
+            <a href='/color/25'>
+                <div class="predefinedColor" style="
+                    background-color: #1194A7;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- green palette 7 -->
+            <a href='/color/26'>
+                <div class="predefinedColor" style="
+                    background-color: #10686B;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- green palette 8 -->
+            <a href='/color/27'>
+                <div class="predefinedColor" style="
+                    background-color: #597C2B;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- green palette 9 -->
+            <a href='/color/28'>
+                <div class="predefinedColor" style="
+                    background-color: #0A5C36;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- green palette 10 -->
+            <a href='/color/29'>
+                <div class="predefinedColor" style="
+                    background-color: #14452F;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- blue palette 1 -->
+            <a href='/color/30'>
+                <div class="predefinedColor" style="
+                    background-color: #C1E9FC;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- blue palette 2 -->
+            <a href='/color/31'>
+                <div class="predefinedColor" style="
+                    background-color: #6ACDE6;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- blue palette 3 -->
+            <a href='/color/32'>
+                <div class="predefinedColor" style="
+                    background-color: #0087BF;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- blue palette 4 -->
+            <a href='/color/33'>
+                <div class="predefinedColor" style="
+                    background-color: #29338E;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- blue palette 5 -->
+            <a href='/color/34'>
+                <div class="predefinedColor" style="
+                    background-color: #D69AC8;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- blue palette 6 -->
+            <a href='/color/35'>
+                <div class="predefinedColor" style="
+                    background-color: #691D69;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- blue palette 7 -->
+            <a href='/color/36'>
+                <div class="predefinedColor" style="
+                    background-color: #C28DE0;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- blue palette 8 -->
+            <a href='/color/37'>
+                <div class="predefinedColor" style="
+                    background-color: #9990BA;
+                    "
+                >
+                </div>
+            </a>
+    
+            <!-- blue palette 9 -->
+            <a href='/color/38'>
+                <div class="predefinedColor" style="
+                background-color: #7F4599;
+                        "
+                >
+                </div>
+            </a>
+        
+            <!-- blue palette 10 -->
+            <a href='/color/39'>
+                <div class="predefinedColor" style="
+                    background-color: #411E5C;
+                    "
+                >
+                </div>
+            </a>
+            </div>
+        </body>
 </html>
